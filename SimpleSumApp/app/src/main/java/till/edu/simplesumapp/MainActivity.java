@@ -34,6 +34,6 @@ public class MainActivity extends AppCompatActivity {
             String strtong = String.valueOf(tong);
 
         //Hiện ra màn hình
-            editTextKQ.setText(strtong3);
+            editTextKQ.setText(strtong);
     }
 }
