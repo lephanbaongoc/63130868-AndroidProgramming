@@ -3,13 +3,16 @@ package till.edu.ex_6_listviewdemo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
+    ArrayList<String> dsTinhThanh;//khai báo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Hiển thị dữ liệu lên list view
         //B1: cần có dữ liệu
-        ArrayList<String> dsTinhThanh;
-        dsTinhThanh = new ArrayList<String>();
+
+        dsTinhThanh = new ArrayList<String>();//tạo thể hiện cụ thê, xin mới
 
         dsTinhThanh.add("Hà Nội");
         dsTinhThanh.add("Thành phố HCM");
@@ -45,5 +48,21 @@ public class MainActivity extends AppCompatActivity {
         ListView lvTenTT = findViewById(R.id.lvDanhSachTT);
             //B3.2: Gắn
         lvTenTT.setAdapter(adapterTT);
+            //B3.3: gắn bộ lắng nghe và sử lý sk user tương tác
+        lvTenTT.setOnItemClickListener(BoLangNgheVaXL);
     }
+
+    //Tạo bộ lắng nghe và xử lý sk OneTimeClick, đặt vào 1 biến
+    AdapterView.OnItemClickListener BoLangNgheVaXL = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            //Hiện lên màn hình thông báo nhanh về vị trí của phần tử vừa chọn
+            //Toast.makeText(MainActivity.this,"Bạn vừa chọn "+String.valueOf(i),Toast.LENGTH_LONG).show();
+
+            //Hiện lên màn hình thông báo nhanh về giá trị của phần tử vừa chọn
+            String StrTenTinhChon = dsTinhThanh.get(i);
+            Toast.makeText(MainActivity.this,"Bạn vừa chọn "+StrTenTinhChon,Toast.LENGTH_LONG).show();
+        }
+    };
+
 }
