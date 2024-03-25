@@ -97,6 +97,7 @@
         tools:layout_editor_absoluteY="447dp" />
 
     <ListView
+        android:id="@+id/lvDanhSachKyNang"
         android:layout_width="265dp"
         android:layout_height="242dp"
         android:layout_marginStart="24dp"

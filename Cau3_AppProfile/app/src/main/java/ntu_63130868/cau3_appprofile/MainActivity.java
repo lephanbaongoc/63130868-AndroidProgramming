@@ -3,6 +3,8 @@ package ntu_63130868.cau3_appprofile;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -26,4 +28,11 @@ public class MainActivity extends AppCompatActivity {
         dsKynang.add("Kỹ năng làm việc nhóm");
         dsKynang.add("Kỹ năng quản lý thời gian");
 
+        ArrayAdapter<String> adapterTT;
+        adapterTT = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,dsKynang);
+
+        ListView lvKyNang = findViewById(R.id.lvDanhSachKyNang);
+
+    }
 }
