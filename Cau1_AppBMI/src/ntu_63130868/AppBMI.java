@@ -13,6 +13,7 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -21,11 +22,11 @@ public class AppBMI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField txtTuoi;
+	private JTextField txtCanNang;
+	private JTextField txtChieuCao;
+	private JTextField txtKQ;
+	private JTextField txtKhuyen;
 	/**
 	 * Create the frame.
 	 */
@@ -67,6 +68,11 @@ public class AppBMI extends JFrame {
 		panel.add(rdbtnNam);
 		rdbtnNam.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		
+		//Gộp rdbtn nam và nữ
+		ButtonGroup bg = new ButtonGroup();
+		bg.add(rdbtnNam);
+		bg.add(rdbtnNu);
+		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		panel_1.setBackground(new Color(255, 255, 255));
@@ -80,12 +86,12 @@ public class AppBMI extends JFrame {
 		panel_1.add(lblNewLabel_1);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 16));
 		
-		textField = new JTextField();
-		textField.setBackground(new Color(255, 255, 255));
-		textField.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		textField.setBounds(111, 27, 96, 27);
-		panel_1.add(textField);
-		textField.setColumns(10);
+		txtTuoi = new JTextField();
+		txtTuoi.setBackground(new Color(255, 255, 255));
+		txtTuoi.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtTuoi.setBounds(113, 27, 96, 27);
+		panel_1.add(txtTuoi);
+		txtTuoi.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nhập thông tin của bạn");
 		lblNewLabel_2.setForeground(new Color(0, 128, 255));
@@ -107,12 +113,12 @@ public class AppBMI extends JFrame {
 		lblNewLabel_1_1.setBounds(10, 11, 96, 27);
 		panel_1_1.add(lblNewLabel_1_1);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		textField_1.setColumns(10);
-		textField_1.setBackground(Color.WHITE);
-		textField_1.setBounds(112, 27, 96, 27);
-		panel_1_1.add(textField_1);
+		txtCanNang = new JTextField();
+		txtCanNang.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtCanNang.setColumns(10);
+		txtCanNang.setBackground(Color.WHITE);
+		txtCanNang.setBounds(112, 27, 96, 27);
+		panel_1_1.add(txtCanNang);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("kilogram");
 		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -132,12 +138,12 @@ public class AppBMI extends JFrame {
 		lblNewLabel_1_1_1.setBounds(10, 11, 96, 27);
 		panel_1_1_1.add(lblNewLabel_1_1_1);
 		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		textField_2.setColumns(10);
-		textField_2.setBackground(Color.WHITE);
-		textField_2.setBounds(112, 27, 96, 27);
-		panel_1_1_1.add(textField_2);
+		txtChieuCao = new JTextField();
+		txtChieuCao.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtChieuCao.setColumns(10);
+		txtChieuCao.setBackground(Color.WHITE);
+		txtChieuCao.setBounds(112, 27, 96, 27);
+		panel_1_1_1.add(txtChieuCao);
 		
 		JLabel lblNewLabel_3 = new JLabel("mét");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -149,12 +155,12 @@ public class AppBMI extends JFrame {
 		lblNewLabel_4.setBounds(78, 391, 128, 35);
 		contentPane.add(lblNewLabel_4);
 		
-		textField_3 = new JTextField();
-		textField_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		textField_3.setColumns(10);
-		textField_3.setBackground(Color.WHITE);
-		textField_3.setBounds(196, 395, 96, 27);
-		contentPane.add(textField_3);
+		txtKQ = new JTextField();
+		txtKQ.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtKQ.setColumns(10);
+		txtKQ.setBackground(Color.WHITE);
+		txtKQ.setBounds(196, 395, 96, 27);
+		contentPane.add(txtKQ);
 		
 		JButton btnNewButton = new JButton("KIỂM TRA");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -172,14 +178,17 @@ public class AppBMI extends JFrame {
 		lblNewLabel_4_1.setBounds(368, 391, 103, 35);
 		contentPane.add(lblNewLabel_4_1);
 		
-		textField_4 = new JTextField();
-		textField_4.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		textField_4.setColumns(10);
-		textField_4.setBackground(Color.WHITE);
-		textField_4.setBounds(481, 395, 221, 27);
-		contentPane.add(textField_4);
+		txtKhuyen = new JTextField();
+		txtKhuyen.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtKhuyen.setColumns(10);
+		txtKhuyen.setBackground(Color.WHITE);
+		txtKhuyen.setBounds(481, 395, 221, 27);
+		contentPane.add(txtKhuyen);
 	}
 	public void XuLyBMI() {
-		
+		//Lấy dữ liệu từ điều khiển
+		String Str_Tuoi = txtTuoi.getText();
+		String Str_ChieuCao = txtChieuCao.getText();
+		String Str_CanNang = txtCanNang.getText();
 	}
 }
