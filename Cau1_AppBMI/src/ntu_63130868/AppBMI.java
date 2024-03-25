@@ -14,6 +14,8 @@ import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class AppBMI extends JFrame {
 
@@ -155,6 +157,11 @@ public class AppBMI extends JFrame {
 		contentPane.add(textField_3);
 		
 		JButton btnNewButton = new JButton("KIỂM TRA");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				XuLyBMI();
+			}
+		});
 		btnNewButton.setForeground(new Color(255, 0, 0));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnNewButton.setBounds(335, 312, 115, 35);
@@ -171,5 +178,8 @@ public class AppBMI extends JFrame {
 		textField_4.setBackground(Color.WHITE);
 		textField_4.setBounds(481, 395, 221, 27);
 		contentPane.add(textField_4);
+	}
+	public void XuLyBMI() {
+		
 	}
 }
