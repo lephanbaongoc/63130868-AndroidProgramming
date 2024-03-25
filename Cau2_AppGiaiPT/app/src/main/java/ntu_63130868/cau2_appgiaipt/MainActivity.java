@@ -36,7 +36,18 @@ public class MainActivity extends AppCompatActivity {
 
         //tính toán
         if(rbtnBac1.isChecked() == true){
-
+            if (SOA == 0) {
+                if (SOB == 0) {
+                    edtKQ.setText("PT vô số nghiệm");
+                }
+                else {
+                edtKQ.setText("Phương trình vô nghiệm.");
+                }
+            }
+            else {
+                double x = -SOB / SOA;
+                edtKQ.setText("x = " + x);
+            }
         }
         if(rbtnBac2.isChecked() == true){
 
