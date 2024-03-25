@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     edtKQ.setText("PT vô số nghiệm");
                 }
                 else {
-                edtKQ.setText("Phương trình vô nghiệm.");
+                edtKQ.setText("PT vô nghiệm.");
                 }
             }
             else {
@@ -50,7 +50,22 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if(rbtnBac2.isChecked() == true){
-
+            double delta = SOB*SOB - 4*SOA*SOC;
+            double x1;
+            double x2;
+            // tính nghiệm
+            if (delta > 0) {
+                x1 = ((-SOB + Math.sqrt(delta)) / (2*SOA));
+                x2 = ((-SOB - Math.sqrt(delta)) / (2*SOA));
+                edtKQ.setText("PT có 2 nghiệm "+ "x1=" + x1 + "; x2=" + x2);
+            }
+            else if (delta == 0) {
+                x1 = (-SOB / (2 * SOA));
+                edtKQ.setText("PT có nghiệm kép: " + "x1 = x2 = " + x1);
+            }
+            else {
+                System.out.println("PT vô nghiệm");
+            }
         }
     }
 }
