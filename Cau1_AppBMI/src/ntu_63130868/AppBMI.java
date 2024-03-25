@@ -151,8 +151,10 @@ public class AppBMI extends JFrame {
 		//Hiển thị lên điều khiển
 		txtKQ.setText(String.valueOf(BMI));
 		
-		
-		
+		//Thêm lời khuyên
+		if(BMI < 18.5) txtKhuyen.setText("Bạn hơi nhẹ cân");
+		if(BMI > 18.5 || BMI < 24.9) txtKhuyen.setText("Bạn có cân nặng bình thường");
+		else txtKhuyen.setText("Bạn bị thừa cân");
 	}
 }
 
