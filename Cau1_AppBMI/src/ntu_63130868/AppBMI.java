@@ -20,7 +20,6 @@ public class AppBMI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField txtTuoi;
 	private JTextField txtCanNang;
 	private JTextField txtChieuCao;
 	private JTextField txtKQ;
@@ -40,58 +39,8 @@ public class AppBMI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 255, 255));
-		panel.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
-		panel.setBounds(76, 67, 281, 76);
-		contentPane.add(panel);
-		panel.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("Chọn giới tính:");
-		lblNewLabel.setBounds(10, 11, 119, 20);
-		panel.add(lblNewLabel);
-		lblNewLabel.setBackground(new Color(255, 255, 255));
-		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
-		
-		JRadioButton rbtnNu = new JRadioButton("Nữ");
-		rbtnNu.setBackground(new Color(255, 255, 255));
-		rbtnNu.setBounds(60, 45, 69, 23);
-		panel.add(rbtnNu);
-		rbtnNu.setSelected(true);
-		rbtnNu.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		
-		JRadioButton rbtnNam = new JRadioButton("Nam");
-		rbtnNam.setBackground(new Color(255, 255, 255));
-		rbtnNam.setBounds(174, 45, 62, 23);
-		panel.add(rbtnNam);
-		rbtnNam.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		
 		//Gộp rdbtn nam và nữ
 		ButtonGroup bg = new ButtonGroup();
-		bg.add(rbtnNam);
-		bg.add(rbtnNu);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
-		panel_1.setBackground(new Color(255, 255, 255));
-		panel_1.setBounds(421, 67, 281, 76);
-		contentPane.add(panel_1);
-		panel_1.setLayout(null);
-		
-		JLabel lblNewLabel_1 = new JLabel("Độ tuổi:");
-		lblNewLabel_1.setBackground(new Color(255, 255, 255));
-		lblNewLabel_1.setBounds(10, 11, 78, 27);
-		panel_1.add(lblNewLabel_1);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-		
-		txtTuoi = new JTextField();
-		txtTuoi.setBackground(new Color(255, 255, 255));
-		txtTuoi.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		txtTuoi.setBounds(113, 27, 96, 27);
-		panel_1.add(txtTuoi);
-		txtTuoi.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nhập thông tin của bạn");
 		lblNewLabel_2.setForeground(new Color(0, 128, 255));
@@ -104,7 +53,7 @@ public class AppBMI extends JFrame {
 		panel_1_1.setLayout(null);
 		panel_1_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		panel_1_1.setBackground(Color.WHITE);
-		panel_1_1.setBounds(421, 200, 281, 76);
+		panel_1_1.setBounds(415, 100, 281, 76);
 		contentPane.add(panel_1_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Cân nặng:");
@@ -129,7 +78,7 @@ public class AppBMI extends JFrame {
 		panel_1_1_1.setLayout(null);
 		panel_1_1_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 		panel_1_1_1.setBackground(Color.WHITE);
-		panel_1_1_1.setBounds(76, 200, 281, 76);
+		panel_1_1_1.setBounds(78, 100, 281, 76);
 		contentPane.add(panel_1_1_1);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Chiều cao:");
@@ -152,14 +101,15 @@ public class AppBMI extends JFrame {
 		
 		JLabel lblNewLabel_4 = new JLabel("Kết quả BMI:");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNewLabel_4.setBounds(78, 391, 128, 35);
+		lblNewLabel_4.setBounds(78, 313, 115, 35);
 		contentPane.add(lblNewLabel_4);
 		
 		txtKQ = new JTextField();
+		txtKQ.setEditable(false);
 		txtKQ.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtKQ.setColumns(10);
 		txtKQ.setBackground(Color.WHITE);
-		txtKQ.setBounds(196, 395, 96, 27);
+		txtKQ.setBounds(203, 317, 96, 27);
 		contentPane.add(txtKQ);
 		
 		JButton btnNewButton = new JButton("KIỂM TRA");
@@ -170,19 +120,20 @@ public class AppBMI extends JFrame {
 		});
 		btnNewButton.setForeground(new Color(255, 0, 0));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnNewButton.setBounds(335, 312, 115, 35);
+		btnNewButton.setBounds(336, 245, 115, 35);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_4_1 = new JLabel("Lời khuyên:");
 		lblNewLabel_4_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblNewLabel_4_1.setBounds(368, 391, 103, 35);
+		lblNewLabel_4_1.setBounds(364, 313, 103, 35);
 		contentPane.add(lblNewLabel_4_1);
 		
 		txtKhuyen = new JTextField();
+		txtKhuyen.setEditable(false);
 		txtKhuyen.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtKhuyen.setColumns(10);
 		txtKhuyen.setBackground(Color.WHITE);
-		txtKhuyen.setBounds(481, 395, 221, 27);
+		txtKhuyen.setBounds(475, 317, 221, 27);
 		contentPane.add(txtKhuyen);
 	}
 	public void XuLyBMI() {
