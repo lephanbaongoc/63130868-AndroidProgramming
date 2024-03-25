@@ -1,22 +1,20 @@
 package ntu_63130868;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JRadioButton;
-import javax.swing.JToggleButton;
-import javax.swing.border.LineBorder;
 import java.awt.Color;
-import javax.swing.SwingConstants;
-import javax.swing.JTextField;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 public class AppBMI extends JFrame {
 
@@ -27,6 +25,8 @@ public class AppBMI extends JFrame {
 	private JTextField txtChieuCao;
 	private JTextField txtKQ;
 	private JTextField txtKhuyen;
+	private JRadioButton rbtnNu;
+	private JRadioButton rbtnNam;
 	/**
 	 * Create the frame.
 	 */
@@ -55,23 +55,23 @@ public class AppBMI extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
 		
-		JRadioButton rdbtnNu = new JRadioButton("Nữ");
-		rdbtnNu.setBackground(new Color(255, 255, 255));
-		rdbtnNu.setBounds(60, 45, 69, 23);
-		panel.add(rdbtnNu);
-		rdbtnNu.setSelected(true);
-		rdbtnNu.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		JRadioButton rbtnNu = new JRadioButton("Nữ");
+		rbtnNu.setBackground(new Color(255, 255, 255));
+		rbtnNu.setBounds(60, 45, 69, 23);
+		panel.add(rbtnNu);
+		rbtnNu.setSelected(true);
+		rbtnNu.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		
-		JRadioButton rdbtnNam = new JRadioButton("Nam");
-		rdbtnNam.setBackground(new Color(255, 255, 255));
-		rdbtnNam.setBounds(174, 45, 62, 23);
-		panel.add(rdbtnNam);
-		rdbtnNam.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		JRadioButton rbtnNam = new JRadioButton("Nam");
+		rbtnNam.setBackground(new Color(255, 255, 255));
+		rbtnNam.setBounds(174, 45, 62, 23);
+		panel.add(rbtnNam);
+		rbtnNam.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		
 		//Gộp rdbtn nam và nữ
 		ButtonGroup bg = new ButtonGroup();
-		bg.add(rdbtnNam);
-		bg.add(rdbtnNu);
+		bg.add(rbtnNam);
+		bg.add(rbtnNu);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
@@ -190,5 +190,18 @@ public class AppBMI extends JFrame {
 		String Str_Tuoi = txtTuoi.getText();
 		String Str_ChieuCao = txtChieuCao.getText();
 		String Str_CanNang = txtCanNang.getText();
+		
+		//Chuyển kiểu dữ liệu
+		double Tuoi = Double.parseDouble(Str_Tuoi);
+		double ChieuCao = Double.parseDouble(Str_ChieuCao);
+		double CanNang = Double.parseDouble(Str_CanNang);
+		
+		//Tính toán
+		if(rbtnNu.isSelected()) {
+			
+		}
+		if(rbtnNam.isSelected()) {
+			
+		}
 	}
 }
