@@ -138,21 +138,19 @@ public class AppBMI extends JFrame {
 	}
 	public void XuLyBMI() {
 		//Lấy dữ liệu từ điều khiển
-		String Str_Tuoi = txtTuoi.getText();
 		String Str_ChieuCao = txtChieuCao.getText();
 		String Str_CanNang = txtCanNang.getText();
 		
 		//Chuyển kiểu dữ liệu
-		double Tuoi = Double.parseDouble(Str_Tuoi);
 		double ChieuCao = Double.parseDouble(Str_ChieuCao);
 		double CanNang = Double.parseDouble(Str_CanNang);
 		
 		//Tính toán
-		if(rbtnNu.isSelected()) {
+		double BMI = CanNang / (ChieuCao * ChieuCao);
 			
-		}
-		if(rbtnNam.isSelected()) {
-			
+		//Hiển thị lên điều khiển
+		
+		
 		}
 	}
 }
