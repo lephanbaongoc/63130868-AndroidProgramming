@@ -94,7 +94,7 @@ public class AppBMI extends JFrame {
 		txtChieuCao.setBounds(112, 27, 96, 27);
 		panel_1_1_1.add(txtChieuCao);
 		
-		JLabel lblNewLabel_3 = new JLabel("mét");
+		JLabel lblNewLabel_3 = new JLabel("cm");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_3.setBounds(218, 34, 47, 14);
 		panel_1_1_1.add(lblNewLabel_3);
@@ -142,15 +142,17 @@ public class AppBMI extends JFrame {
 		String Str_CanNang = txtCanNang.getText();
 		
 		//Chuyển kiểu dữ liệu
-		double ChieuCao = Double.parseDouble(Str_ChieuCao);
+		double ChieuCao = Double.parseDouble(Str_ChieuCao)/100;
 		double CanNang = Double.parseDouble(Str_CanNang);
 		
 		//Tính toán
-		double BMI = CanNang / (ChieuCao * ChieuCao);
+		double BMI = Math.round(CanNang / (ChieuCao * ChieuCao));
 			
 		//Hiển thị lên điều khiển
+		txtKQ.setText(String.valueOf(BMI));
 		
 		
-		}
+		
 	}
 }
+
