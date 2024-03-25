@@ -24,8 +24,6 @@ public class AppBMI extends JFrame {
 	private JTextField txtChieuCao;
 	private JTextField txtKQ;
 	private JTextField txtKhuyen;
-	private JRadioButton rbtnNu;
-	private JRadioButton rbtnNam;
 	/**
 	 * Create the frame.
 	 */
