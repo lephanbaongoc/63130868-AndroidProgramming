@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
     }
 
     public void TimX(View view){
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         EditText edtKQ = findViewById(R.id.edtKQ);
         RadioButton rbtnBac1 = findViewById(R.id.rbtnB1);
         RadioButton rbtnBac2 = findViewById(R.id.rbtnB2);
+        TextView tvSOC = findViewById(R.id.textView3);
 
         //lấy dữ liệu về
         String strSOA = edtSOA.getText().toString();
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 edtKQ.setText("x = " + x);
             }
         }
+
         if(rbtnBac2.isChecked() == true){
             double delta = SOB*SOB - 4*SOA*SOC;
             double x1;

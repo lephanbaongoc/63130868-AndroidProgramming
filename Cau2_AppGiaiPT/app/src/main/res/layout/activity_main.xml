@@ -22,7 +22,6 @@
             android:id="@+id/rbtnB1"
             android:layout_width="116dp"
             android:layout_height="wrap_content"
-            android:checked="true"
             android:text="Bậc 1"
             android:textSize="16sp" />
 
